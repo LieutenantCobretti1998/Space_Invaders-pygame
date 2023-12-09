@@ -7,6 +7,8 @@ image_files = enemy_randomization.get_image_files("Images/aliens/Spaceships-3")
 
 spread_values = [-2, 0, 2]
 
+# Here we create our Aliens
+
 
 class Aliens(Sprite):
     def __init__(self, surface, previous_x_position):
