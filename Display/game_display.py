@@ -43,7 +43,6 @@ class Game:
         ship_sprite = Group()
         ship_instance = ship.Ship(self.display)
         ship_sprite.add(ship_instance)
-        # print(ship_sprite)
 
         bullets = ship_instance.bullets
         rockets = ship_instance.rocket
@@ -60,7 +59,7 @@ class Game:
         highest_score = score.HighestScore(self.display, 20, (255, 255, 255), self.highest_record)
         ship_characteristics = ship_situation.ShipCharacteristics(self.display, 32, (255, 255, 255))
 
-        def handle_game_over():
+        def handle_game_over() -> bool:
             ship_instance.display_gameover_menu(self.display, 32, (255, 0, 145))
             while True:
                 for event in pygame.event.get():

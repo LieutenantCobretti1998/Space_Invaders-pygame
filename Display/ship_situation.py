@@ -8,7 +8,7 @@ class ShipCharacteristics:
         self.font_color = font_color
         self.y_pos = 10
 
-    def draw_health_amount(self, health):
+    def draw_health_amount(self, health) -> None:
         x_pos = 0
         match self.surface.get_width():
             case 1280:
@@ -23,7 +23,7 @@ class ShipCharacteristics:
         health_text = self.font.render(f"Health: {health}", True, self.font_color)
         self.surface.blit(health_text, (x_pos, self.y_pos))
 
-    def draw_bullet_amount(self, bullets, reloading):
+    def draw_bullet_amount(self, bullets, reloading) -> None:
         x_pos = 0
         match self.surface.get_width():
             case 1280:
@@ -40,7 +40,7 @@ class ShipCharacteristics:
             bullets_amount = self.font.render(f"Reloading", True, self.font_color)
         self.surface.blit(bullets_amount, (x_pos, self.y_pos))
 
-    def draw_rocket_amount(self, rockets, reloading):
+    def draw_rocket_amount(self, rockets, reloading) -> None:
         x_pos = 0
         match self.surface.get_width():
             case 1280:

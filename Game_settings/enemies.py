@@ -22,21 +22,18 @@ class Aliens(Sprite):
 
         self.rect.y = -self.rect.height
 
-        # self.projectiles_class = shooting_mechanics.EnemyProjectTile
-        # self.projectiles_sprite = Group()
-
-    def update(self):
+    def update(self) -> None:
         self.rect.y += 2
 
     @staticmethod
-    def update_enemies(aliens: Group, surface: pygame.display):
+    def update_enemies(aliens: Group, surface: pygame.display) -> None:
         aliens.update()
         for alien in aliens.copy():
             if alien.rect.top > surface.get_height():
                 aliens.remove(alien)
             aliens.draw(surface)
 
-    def fire_launch(self):
+    def fire_launch(self) -> Sprite:
         projectile = shooting_mechanics.EnemyProjectTile(self.surface, self.rect.centerx, self.rect.bottom,
                                                          random.choice(spread_values))
         return projectile

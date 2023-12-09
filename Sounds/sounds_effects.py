@@ -75,18 +75,18 @@ class GameEffects(MainMusic):
         self.rocket_explosionChannel = mixer.Channel(4)
         self.rocket_explosion_sound = mixer.Sound("Sounds/low-impactwav-14905.mp3")
 
-    def ship_blasters(self):
+    def ship_blasters(self) -> None:
         self.blaster_channel.play(self.blaster_sound)
         self.blaster_channel.set_volume(self.volume)
 
-    def blaster_explosion(self):
+    def blaster_explosion(self) -> None:
         self.blaster_explosionChannel.play(self.blaster_explosion_sound)
         self.blaster_explosionChannel.set_volume(self.volume)
 
-    def ship_rocket(self):
+    def ship_rocket(self) -> None:
         self.rocket_channel.play(self.rocket_sound)
         self.rocket_channel.set_volume(self.volume)
 
-    def rocket_explosion(self):
+    def rocket_explosion(self) -> None:
         self.rocket_explosionChannel.play(self.rocket_explosion_sound)
         self.rocket_explosionChannel.set_volume(self.volume)

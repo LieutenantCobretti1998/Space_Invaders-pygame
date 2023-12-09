@@ -77,6 +77,7 @@ def load_score_from_json() -> int:
         print("Score config file not found or contains invalid data.")
         return 0
 
+
 def load_volume_from_json() -> int:
     try:
         with open("Saves/volume_config.json", "r") as vol:

@@ -37,7 +37,7 @@ class Rocket(Sprite):
         self.rect.centerx = self.position_x
         self.rect.top = self.position_y
 
-    def update(self):
+    def update(self) -> None:
         self.position_y -= self.speed
         self.rect.y = self.position_y
 
@@ -50,14 +50,14 @@ class EnemyProjectTile(Sprite):
         self.rect = self.image.get_rect(center=(x, y))
         self.x_velocity = x_velocity
 
-    def update(self):
+    def update(self) -> None:
         self.rect.y += 5
         self.rect.x += self.x_velocity
 
-    def fire(self, bullet_group: Group, bullet):
+    def fire(self, bullet_group: Group, bullet) -> None:
         bullet.update()
         # print(bullet.rect.bottom)
         if self.rect.bottom < 0 or self.rect.top > self.surface.get_height():
             bullet_group.remove(bullet)
             bullet.kill()
-        # bullet_group.draw(self.surface)
+
