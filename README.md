@@ -10,8 +10,7 @@ This Space Invaders clone is a personal project developed for educational purpos
 - Simple and intuitive interface with health, ammo, and current/ highest scores.
 - # Installation
 
-Requires Python and Pygame.
+Requires Python (3.11.5) and Pygame(2.5.2).
 
-1. Clone the repository:
-   ```bash
+**1.** Clone the repository:
    git clone https://github.com/yourusername/space-invaders.git
