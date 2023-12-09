@@ -3,6 +3,7 @@ import pygame
 from dataclasses import dataclass, field
 from Images import animations
 
+
 @dataclass
 class Screen:
     width: int = field(default=1280)

@@ -31,20 +31,20 @@ class Ship(Sprite):
         self.rockets_reloading = False
         self.ship_position()
 
-    def start_bullets_reloading(self):
+    def start_bullets_reloading(self) -> None:
         self.bullets_reloading = True
         self.bullets_reloading_time = time.time()
 
-    def check_bullet_reloading(self):
+    def check_bullet_reloading(self) -> None:
         if self.bullets_reloading and (time.time() - self.bullets_reloading_time > 5):
             self.bullets_reloading = False
             self.bullets_amount = 20
 
-    def start_rockets_reloading(self):
+    def start_rockets_reloading(self) -> None:
         self.rockets_reloading = True
         self.rockets_reloading_time = time.time()
 
-    def check_rockets_reloading(self):
+    def check_rockets_reloading(self) -> None:
         if self.bullets_reloading and (time.time() - self.rockets_reloading_time > 5):
             self.rockets_reloading = False
             self.rockets_amount = 5
@@ -72,10 +72,10 @@ class Ship(Sprite):
         pygame.draw.rect(self.surface, self.health_bar_color,
                          (health_bar_x, health_bar_y, current_length, self.health_bar_width))
 
-    def decrease_health_bar(self, amount):
+    def decrease_health_bar(self, amount) -> None:
         self.current_health = max(self.current_health - amount, 0)
 
-    def display_gameover_menu(self, display: pygame.Surface, font_size, font_color):
+    def display_gameover_menu(self, display: pygame.Surface, font_size, font_color) -> None:
         font = pygame.font.SysFont("arial", font_size)
         game_over_text = font.render("Game Over", True, font_color)
         restart_text = font.render("Press 'R' to restart", True, font_color)
@@ -118,7 +118,7 @@ class Ship(Sprite):
         # Update the ship rect after changing position
         self.ship_position()
 
-    def shooting(self, ship_side):
+    def shooting(self, ship_side) -> None:
         match ship_side:
             case "left":
                 if not self.bullets_reloading:
@@ -139,7 +139,7 @@ class Ship(Sprite):
                 else:
                     self.check_bullet_reloading()
 
-    def rocket_launch(self):
+    def rocket_launch(self) -> None:
         if not self.rockets_reloading:
             rocket = self.rocket_class(self.surface, self.position_x, self.position_y)
             self.rocket.add(rocket)
@@ -149,7 +149,7 @@ class Ship(Sprite):
         else:
             self.check_rockets_reloading()
 
-    def update_bullets(self):
+    def update_bullets(self) -> None:
         self.bullets.update()
         for bullet in self.bullets.copy():
             if bullet.rect.bottom < 0:
@@ -157,7 +157,7 @@ class Ship(Sprite):
 
             self.bullets.draw(self.surface)
 
-    def update_rockets(self):
+    def update_rockets(self) -> None:
         self.rocket.update()
         for rocket in self.rocket.copy():
             if rocket.rect.bottom < 0:

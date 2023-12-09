@@ -21,7 +21,7 @@ music_instance = menu_instance.main_music
 control_menu = menu_instance.create_keys_menu()
 
 
-def noop():
+def noop() -> None:
     pass
 
 

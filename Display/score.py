@@ -12,11 +12,11 @@ class ScoreBoard:
         self.x_pos = self.surface.get_width() - self.margin
         self.y_pos = 10
 
-    def draw(self, display):
+    def draw(self, display) -> None:
         score_text = self.font.render(f"Score: {self.score}", True, self.font_color)
         display.blit(score_text, (self.x_pos, self.y_pos))
 
-    def update(self, value):
+    def update(self, value) -> None:
         self.score += value
 
 
@@ -31,9 +31,9 @@ class HighestScore(ScoreBoard):
         self.x_pos = self.surface.get_width() - self.margin - 20
         self.y_pos = 50
 
-    def draw(self, display):
+    def draw(self, display) -> None:
         score_text = self.font.render(f"Highest Score: {self.highest_score}", True, self.font_color)
         display.blit(score_text, (self.x_pos, self.y_pos))
 
-    def update(self, **kwargs):
+    def update(self, **kwargs) -> None:
         self.highest_score = kwargs['highest_score']

@@ -29,7 +29,7 @@ class Explosion(Sprite):
         self.image = self.frames[self.current_frame]
         self.rect = self.image.get_rect(center=center)
 
-    def update(self):
+    def update(self) -> None:
         now = pygame.time.get_ticks()
         if now - self.last_update > self.frame_rate:
             self.last_update = now
