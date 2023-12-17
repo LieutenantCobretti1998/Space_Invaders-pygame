@@ -21,6 +21,20 @@
 **3.** Usage:
 run main.py
 
+**Control**
+
+**A** Turn left . Can be changed in settings
+
+**D** Turn right. Can be changed in settings
+
+**W** Go up. Can be changed in settings 
+
+**S** Go down. Can be changed in settings
+
+**Left and right arrows** Use for laser's shooting.
+
+**Space** Use for rocket's shooting
+
 **Contributing**
 Feel free to fork the repository and submit pull requests. I know nobody will do that but anyway I will write it here:)
 
