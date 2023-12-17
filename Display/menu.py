@@ -18,7 +18,7 @@ class mainMenu:
         self.current_action = None
         self.new_key = None
         self.current_label = None
-        self.main_theme = themes_and_fonts.menu_transpareny_theme
+        self.main_theme = themes_and_fonts.menu_transparency_theme
         self.pause_menu_theme = themes_and_fonts.menu_black_background
         self.effects = sounds_effects.MusicEffects()
         self.sound_engine = self.effects.engine
@@ -137,17 +137,16 @@ class mainMenu:
 
     def restore_default_keys(self, *args) -> None:
         save_keys_to_json(self.default_keys)
-
-        args[0].set_title(f"Left-{self.default_key_bindings['left']}")
-        args[1].set_value("")
-        args[2].set_title(f"Right-{self.default_key_bindings['right']}")
-        args[3].set_value("")
-        args[4].set_title(f"Up-{self.default_key_bindings['up']}")
-        args[5].set_value("")
-        args[6].set_title(f"Down-{self.default_key_bindings['down']}")
-        args[7].set_value("")
-
         self.default_key_bindings = load_keys_from_json()
+
+        args[0].set_title(f"left-{self.default_key_bindings['left']}")
+        args[1].set_value("")
+        args[2].set_title(f"right-{self.default_key_bindings['right']}")
+        args[3].set_value("")
+        args[4].set_title(f"up-{self.default_key_bindings['up']}")
+        args[5].set_value("")
+        args[6].set_title(f"down-{self.default_key_bindings['down']}")
+        args[7].set_value("")
 
     def clear_binding(self, action: str, label: Widget) -> None:
         if self.is_key_dublicate(action):
