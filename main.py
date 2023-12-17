@@ -1,4 +1,4 @@
-import pygame.event
+import pygame
 from Display import display_settings
 from Display import menu
 from Saves.save_settings import save_resolution_to_json, load_resolution_from_json, save_keys_to_json

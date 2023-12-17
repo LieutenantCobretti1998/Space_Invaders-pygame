@@ -1,5 +1,5 @@
 import json
-from pygame_menu import widgets
+
 
 default_settings = {
     "left": "a",

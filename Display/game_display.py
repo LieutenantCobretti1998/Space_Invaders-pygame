@@ -74,6 +74,8 @@ class Game:
                 pygame.display.flip()
 
         while self.running:
+            rockets_is_reloading, bullets_is_reloading = (ship_instance.rockets_reloading,
+                                                          ship_instance.bullets_reloading)
             ship_sprite.update()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -106,7 +108,7 @@ class Game:
                             self.menu_music()
                             return self.menu_screen
 
-                        if event.type == pygame.KEYDOWN and not self.game_paused:
+                        if event.type == pygame.KEYDOWN and not self.game_paused and not bullets_is_reloading:
                             match event.key:
                                 case pygame.K_LEFT:
                                     ship_instance.shooting("left")
@@ -115,7 +117,7 @@ class Game:
                                     ship_instance.shooting("right")
                                     shooting_effect.ship_blasters()
 
-                        if event.key == pygame.K_SPACE and not self.game_paused:
+                        if event.key == pygame.K_SPACE and not self.game_paused and not rockets_is_reloading:
                             ship_instance.rocket_launch()
                             shooting_effect.ship_rocket()
 
