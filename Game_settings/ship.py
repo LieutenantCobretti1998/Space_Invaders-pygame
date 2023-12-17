@@ -45,7 +45,7 @@ class Ship(Sprite):
         self.rockets_reloading_time = time.time()
 
     def check_rockets_reloading(self) -> None:
-        if self.bullets_reloading and (time.time() - self.rockets_reloading_time > 5):
+        if self.rockets_reloading and (time.time() - self.rockets_reloading_time > 5):
             self.rockets_reloading = False
             self.rockets_amount = 5
 
